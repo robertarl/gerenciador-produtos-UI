@@ -5,13 +5,15 @@ import { ProductRoutingModule } from './product-routing.module';
 import { ProductsComponent } from './products/products.component';
 import { ProductCreateComponent } from './product-create/product-create.component';
 import { ProductUpdateComponent } from './product-update/product-update.component';
+import { HeaderComponent } from './models/header/header.component';
 
 
 @NgModule({
   declarations: [
     ProductsComponent,
     ProductCreateComponent,
-    ProductUpdateComponent
+    ProductUpdateComponent,
+    HeaderComponent
   ],
   imports: [
     CommonModule,
