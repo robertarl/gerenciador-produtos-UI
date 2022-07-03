@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { ProductService } from '../services/product.service';
+import { Location } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-product-update',
@@ -7,9 +12,50 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductUpdateComponent implements OnInit {
 
-  constructor() { }
+  form: FormGroup
 
-  ngOnInit(): void {
+  constructor(private formBilder: FormBuilder,
+              private service: ProductService,
+              private snackBar: MatSnackBar,
+              private location: Location,
+              private route: ActivatedRoute) {
+    this.form = this.formBilder.group({
+      id: null,
+      name: [null],
+      price: 0
+    });
   }
 
+  ngOnInit(): void {
+    const id = this.route.snapshot.paramMap.get("id");
+    if(id != null){
+      this.service.findById(id).subscribe((product) => {
+        this.form.setValue({
+          id: product.id,
+          name: product.name,
+          price: product.price
+        })
+      });
+    }
+
+  }
+
+  updateProduct(): void{
+    this.service.update(this.form.value)
+                .subscribe(data => this.sucess(),
+                error =>this.onError());
+  }
+
+  cancel(){
+    this.location.back();
+  }
+
+  private sucess(){
+    this.snackBar.open('Produto atualizado com sucesso!', 'Close', {duration: 3000});
+    this.cancel();
+  }
+
+  private onError(){
+    this.snackBar.open('Erro ao atualizar o produto!', 'Close', {duration: 3000});
+  }
 }
