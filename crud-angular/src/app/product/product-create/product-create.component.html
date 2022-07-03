@@ -1,1 +1,26 @@
-<p>product-create works!</p>
+<app-header></app-header>
+<mat-card >
+  <mat-card-title>
+      Novo Produto
+  </mat-card-title>
+
+  <mat-card-content class="new">
+    <form [formGroup]="form" class="min-width">
+      <mat-form-field class="nome">
+          <input matInput placeholder="Nome: " formControlName="name">
+      </mat-form-field>
+
+      <mat-form-field class="preco">
+          <input matInput currencyMask placeholder="Preço (R$): "
+              formControlName="price" [options]="{ align: 'left', prefix: 'R$ ', thousands: '.', decimal: ',' }" >
+      </mat-form-field>
+  </form>
+
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="createProduct()">Salvar</button>
+    <button mat-raised-button (click)="cancel()">Cancelar</button>
+  </mat-card-actions>
+  </mat-card-content>
+</mat-card>
+
+
