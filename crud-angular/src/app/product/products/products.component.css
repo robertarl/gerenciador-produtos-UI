@@ -1,0 +1,46 @@
+section{
+  margin: 2em auto;
+  width: 80%;
+}
+
+.produtos-header{
+  margin-bottom: 10px;
+  background: none;
+}
+.title{
+  font-size: 24px;
+  display: inline-block;
+  font-weight: 600;
+  color: #333;
+}
+table{
+  width: 100%;
+
+}
+.edit{
+  margin: 10px;
+}
+.loading-spinner{
+  padding: 25px;
+  background: rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.add{
+  float: right;
+}
+
+.edit{
+  color: #64c018;
+}
+.delete{
+  color: #e35e6b;
+}
+.mat-column-action{
+  text-align: center;
+}
+
+.mat-column-name{
+  width: 40%;
+}
