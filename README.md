@@ -16,11 +16,12 @@
     <ul>
       <li>Produtos cadastrados</li>
       <li>Funcionalidades: </li>
-    </ul>
-    <ul>
+      <ul>
       <li>Cadastrar novo produto</li>
       <li>Editar um determinado produto </li>
       <li>Remover um determinado produto </li>
     </ul>
+    </ul>
+    
   </li>
 </ul>
