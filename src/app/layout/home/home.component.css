@@ -1,0 +1,131 @@
+/* .navbar{
+  padding: 0;
+}
+.fw-normal {
+  font-weight: 400!important;
+
+}
+.display-5 {
+  font-size: 3rem;
+  line-height: 1.2;
+
+}
+
+.header{
+  display: flex;
+  align-items: center;
+}
+.header a{
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.header .logo{
+  max-height: 130px;
+}
+.produtos{
+  max-height: 100px;
+  margin-left: auto;
+}
+a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+.imgs{
+  box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+  margin: 3px;
+  border-radius: 5px;
+
+}
+
+.principal{
+  margin-bottom: 95px;
+  text-align: center;
+}
+.footer{
+  position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1rem;
+    font-weight: 300;
+
+}
+ */
+
+
+ .masthead{
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
+  background-color: #9f70f3;
+  background-size: cover;
+  z-index: 0;
+}
+
+.align-items-center{
+  align-items: center !important;
+}
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.masthead h1{
+  font-size: 3rem;
+  color: #fff;
+  font-weight: 500;
+  line-height: 1.1;
+  z-index: 1;
+}
+.masthead h2{
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, .8);
+}
+
+.masthead .masthead-cards{
+  position: relative;
+  z-index: 1;
+}
+
+.d-flex{
+  display: flex !important;
+}
+.masthead a{
+  color: rgba(255, 255, 255, .8);
+  text-decoration: underline;
+  z-index: 1;
+}
+.masthead .masthead-cards .card{
+  opacity: 1;
+  font-size: .8rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: .05rem;
+  color: #212529;
+  transition: .15s all;
+}
+.border-0{
+  border: 0 !important;
+}
+.shadow-lg{
+  box-shadow: 0 2rem 1.5rem -1.5rem rgba(33,37,41,.15),0 0 1.5rem .5rem rgba(33,37,41,.05)!important;
+}
+.text-center{
+  text-align: center !important;
+}
+.card-body{
+  flex: 1 1 auto;
+  min-height: 1px;
+  padding: 1.25rem;
+}
+img{
+  vertical-align: middle;
+  border-style: none;
+}
+
