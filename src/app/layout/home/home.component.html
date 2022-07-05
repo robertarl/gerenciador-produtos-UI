@@ -70,17 +70,24 @@
               <div class="card border-0 border-bottom-red shadow-lg shadow-hover">
                 <div class="card-body text-center">
                   <div class="text-center">
-                    <img
-                  src="https://cdn-icons-png.flaticon.com/512/1524/1524539.png"
-                  alt="produtos"
-                  style="width: 70px; margin-bottom: 10px"
-                />
+                    <fa-icon [icon]="faCubes" style="font-size: 50px; margin-bottom: 50px;"></fa-icon>
                   </div>
                   Produtos
                 </div>
               </div>
             </a>
+            <a routerLink="/products/categorias" class="w-50 pl-3 pb-4">
+              <div class="card border-0 border-bottom-blue shadow-lg shadow-hover">
+                <div class="card-body text-center">
+                  <div class="text-center">
+                    <fa-icon [icon]="faSitemap" style="font-size: 50px; margin-bottom: 50px;"></fa-icon>
+                  </div>
+                  Categorias
+                </div>
+              </div>
+            </a>
           </div>
+          <div class="shape"></div>
         </div>
       </div>
     </div>

@@ -13,6 +13,7 @@ import { HeaderComponent } from './models/header/header.component';
 import { CurrencyMaskModule } from "ng2-currency-mask";
 
 
+
 @NgModule({
   declarations: [
     ProductsComponent,

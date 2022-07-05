@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { faCubes, faSitemap } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-home',
@@ -17,4 +19,6 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/home'])
   }
 
+  faCubes = faCubes;
+  faSitemap = faSitemap;
 }
