@@ -6,6 +6,7 @@ import { ProductService } from '../services/product.service';
 import { catchError, Observable, of } from 'rxjs';
 import { ErrorDialogComponent } from 'src/app/shared/components/error-dialog/error-dialog.component';
 import Swal from 'sweetalert2';
+import { faFilter, faPen, faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -15,8 +16,14 @@ import Swal from 'sweetalert2';
 })
 export class ProductsComponent implements OnInit {
 
+  faPlus = faPlus;
+  faFilter = faFilter;
+  faPen = faPen;
+  faTrash = faTrash;
+
+
   products$: Observable<Product[]>;
-  displayedColumns = ['id', 'name', 'price', 'action'];
+  displayedColumns = ['id', 'name', 'category', 'price', 'stock', 'action'];
 
   constructor(
     private productService: ProductService,

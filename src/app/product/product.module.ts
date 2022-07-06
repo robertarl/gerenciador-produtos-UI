@@ -11,6 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
 import { HeaderComponent } from './models/header/header.component';
 import { CurrencyMaskModule } from "ng2-currency-mask";
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 
@@ -27,7 +28,8 @@ import { CurrencyMaskModule } from "ng2-currency-mask";
     AppMaterialModule,
     SharedModule,
     ReactiveFormsModule,
-    CurrencyMaskModule
+    CurrencyMaskModule,
+    FontAwesomeModule
   ]
 })
 export class ProductModule { }

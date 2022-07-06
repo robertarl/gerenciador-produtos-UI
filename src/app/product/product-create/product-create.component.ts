@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ProductService } from '../services/product.service';
 import { Location } from '@angular/common';
@@ -12,6 +12,7 @@ import { Location } from '@angular/common';
 export class ProductCreateComponent implements OnInit {
 
   form: FormGroup
+
 
   constructor(private formBilder: FormBuilder,
               private service: ProductService,
