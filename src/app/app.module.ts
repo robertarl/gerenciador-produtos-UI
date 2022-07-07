@@ -12,6 +12,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,

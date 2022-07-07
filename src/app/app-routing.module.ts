@@ -4,17 +4,24 @@ import { HomeComponent } from './layout/home/home.component';
 
 const routes: Routes = [
 
-  {path: 'products',
-  loadChildren: () => import('./product/product.module').then(m => m.ProductModule),
+  {
+    path: 'products',
+    loadChildren: () =>
+      import('./product/product.module').then((m) => m.ProductModule),
   },
   {
-    path: "",
+    path: 'categories',
+    loadChildren: () =>
+      import('./category/category.module').then((m) => m.CategoryModule),
+  },
+  {
+    path: '',
     component: HomeComponent,
-  }
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -64,11 +64,11 @@
         <th mat-header-cell *matHeaderCellDef>Ações</th>
         <td mat-cell *matCellDef="let row">
           <button mat-icon-button aria-label="Editar" class="edit">
-            <fa-icon [icon]="faPen" (click)="update(row.id)">edit</fa-icon>
+            <fa-icon [icon]="faPen" (click)="update(row.id)"></fa-icon>
           </button>
 
           <button mat-icon-button aria-label="Remover" class="delete">
-            <fa-icon [icon]="faTrash" (click)="deletar(row.id)">edit</fa-icon>
+            <fa-icon [icon]="faTrash" (click)="deletar(row.id)"></fa-icon>
           </button>
         </td>
       </ng-container>

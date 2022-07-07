@@ -71,24 +71,11 @@
   background-color: transparent;
   border: 0;
 }
-a {
-  text-decoration: none;
-
-}
 
 table{
   margin-top: 1.5rem!important;
 }
-.produtos-header {
-  margin-bottom: 10px;
-  background: none;
-}
-.title {
-  font-size: 24px;
-  display: inline-block;
-  font-weight: 600;
-  color: #333;
-}
+
 table {
   width: 100%;
 }
