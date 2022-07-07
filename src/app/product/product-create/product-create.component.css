@@ -1,6 +1,100 @@
+.section-products{
+  min-height: 80vh;
+  display: block;
+}
+.px-5{
+  padding-left: 3rem!important;
+  padding-right: 3rem!important;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+img{
+  width: 100%;
+  vertical-align: middle;
+  border-style: none;
+}
+.mb-2 {
+  margin-bottom: .5rem!important;
+
+}
+.col-4 {
+  flex: 0 0 33.333333%;
+  max-width: 33.333333%;
+  position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.col-8{
+  flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.d-flex {
+  display: flex!important;
+}
+
+.mr-2{
+  margin-right: .5rem!important;
+}
+.w-50 {
+  width: 50%!important;
+}
+.form-group {
+  margin-bottom: 1rem;
+}
+.control{
+  display: block;
+  width: 100%;
+
+}
+h6{
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-top: 0;
+}
+.file {
+  display: flex;
+  align-items: center;
+  margin-top: .25rem!important;
+}
+.btn-success {
+  color: #fff;
+  background-color: #28a745;
+  border-color: #28a745;
+}
+.btn-success:hover {
+  color: #fff;
+  background-color: #218838;
+  border-color: #1e7e34;
+}
+.select-img, .remove-img {
+  width: 100%;
+}
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
 mat-card{
   margin: 2em auto;
-  width: 50%;
+  width: 70%;
   text-align: center;
 }
 

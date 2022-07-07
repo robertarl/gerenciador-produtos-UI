@@ -1,26 +1,74 @@
 <app-header></app-header>
-<mat-card >
-  <mat-card-title>
-      Novo Produto
-  </mat-card-title>
+<section class="section-products">
+  <div class="container px-5">
+    <mat-card>
+            <mat-card-title> Novo Produto </mat-card-title>
+          <mat-card-content class="new">
+            <form [formGroup]="form" class="min-width">
+              <mat-form-field class="nome">
+                <input
+                  matInput
+                  placeholder="Nome"
+                  required
+                  formControlName="name"
+                />
+              </mat-form-field>
 
-  <mat-card-content class="new">
-    <form [formGroup]="form" class="min-width">
-      <mat-form-field class="nome">
-          <input matInput placeholder="Nome" required formControlName="name" >
-      </mat-form-field>
+              <mat-form-field class="categoria">
+                <mat-label>Categoria</mat-label>
+                <mat-select required formControlName="category">
+                  <mat-option value="none" style="font-size: 13px"
+                    >--Selecione uma categoria--</mat-option
+                  >
+                  <mat-option value="one">First option</mat-option>
+                  <mat-option value="two">Second option</mat-option>
+                </mat-select>
+              </mat-form-field>
 
-      <mat-form-field class="preco">
-          <input matInput currencyMask placeholder="Preço (R$): " required
-              formControlName="price" [options]="{ align: 'left', prefix: 'R$ ', thousands: '.', decimal: ',' }" >
-      </mat-form-field>
-  </form>
+              <div class="d-flex" style="justify-content: space-between;">
+                <mat-form-field class="preco" style="width: 40%;">
+                  <input
+                    matInput
+                    currencyMask
+                    placeholder="Preço (R$): "
+                    required
+                    formControlName="price"
+                    [options]="{
+                      align: 'left',
+                      prefix: 'R$ ',
+                      thousands: '.',
+                      decimal: ','
+                    }"
+                  />
+                </mat-form-field>
 
-  <mat-card-actions>
-    <button mat-raised-button class="create" (click)="createProduct()">Cadastrar</button>
-    <button mat-raised-button (click)="cancel()">Cancelar</button>
-  </mat-card-actions>
-  </mat-card-content>
-</mat-card>
+                <mat-form-field class="quantidade" style="width: 50%;">
+                  <input
+                    matInput
+                    placeholder="Quantidade"
+                    required
+                    formControlName="quantity"
+                  />
+                </mat-form-field>
+              </div>
 
+              <mat-form-field class="descricao">
+                <mat-label>Descrição</mat-label>
+                <textarea matInput formControlName="quantity"></textarea>
+              </mat-form-field>
+            </form>
 
+            <mat-card-actions>
+              <button
+                mat-raised-button
+                class="create"
+                (click)="createProduct()"
+              >
+                Cadastrar
+              </button>
+              <button mat-raised-button (click)="cancel()">Cancelar</button>
+            </mat-card-actions>
+          </mat-card-content>
+    </mat-card>
+  </div>
+</section>

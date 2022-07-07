@@ -20,7 +20,10 @@ export class ProductCreateComponent implements OnInit {
               private location: Location) {
     this.form = this.formBilder.group({
       name: [null],
-      price: 0
+      category: null,
+      price: 0,
+      quantity: [null],
+      description: null
     });
   }
 

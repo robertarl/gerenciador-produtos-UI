@@ -22,7 +22,10 @@ export class ProductUpdateComponent implements OnInit {
     this.form = this.formBilder.group({
       id: null,
       name: [null],
-      price: 0
+      category: null,
+      price: 0,
+      quantity: [null],
+      description: null
     });
   }
 
@@ -33,7 +36,10 @@ export class ProductUpdateComponent implements OnInit {
         this.form.setValue({
           id: product.id,
           name: product.name,
-          price: product.price
+          category: product.category,
+          price: product.price,
+          quantity: product.quantity,
+          description: product.description
         })
       });
     }
