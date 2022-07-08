@@ -67,12 +67,9 @@
             </mat-form-field>
           </div>
 
-          <mat-form-field class="descricao">
-            <mat-label>Descrição</mat-label>
-            <textarea matInput formControlName="description"></textarea>
-            <mat-error *ngFor="let validation of validation_messages.description">
-              <mat-error class="error-message" *ngIf="form.get('description')?.hasError(validation.type) && (form.get('description')?.dirty || form.get('description')?.touched)">{{validation.message}}</mat-error>
-            </mat-error>
+          <mat-form-field >
+            <mat-label class="descricao">Descrição</mat-label>
+            <textarea matInput formControlName="description" ></textarea>
           </mat-form-field>
 
         </form>

@@ -107,4 +107,6 @@ table {
 .mat-column-category{
   width: 20%;
 }
-
+.mat-column-price{
+  width: 20%;
+}

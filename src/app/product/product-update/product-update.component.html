@@ -12,17 +12,9 @@
                   required
                   formControlName="name"
                 />
-              </mat-form-field>
-
-              <mat-form-field class="categoria">
-                <mat-label>Categoria</mat-label>
-                <mat-select required formControlName="category_id">
-                  <mat-option value="none" style="font-size: 13px"
-                    >--Selecione uma categoria--</mat-option
-                  >
-                  <mat-option value="one">First option</mat-option>
-                  <mat-option value="two">Second option</mat-option>
-                </mat-select>
+                <mat-error *ngFor="let validation of validation_messages.name">
+                  <mat-error class="error-message" *ngIf="form.get('name')?.hasError(validation.type) && (form.get('name')?.dirty || form.get('name')?.touched)">{{validation.message}}</mat-error>
+                </mat-error>
               </mat-form-field>
 
               <div class="d-flex" style="justify-content: space-between;">
@@ -40,6 +32,10 @@
                       decimal: ','
                     }"
                   />
+
+                  <mat-error *ngFor="let validation of validation_messages.price">
+                    <mat-error class="error-message" *ngIf="form.get('price')?.hasError(validation.type) && (form.get('price')?.dirty || form.get('price')?.touched)">{{validation.message}}</mat-error>
+                  </mat-error>
                 </mat-form-field>
 
                 <mat-form-field class="quantidade" style="width: 50%;">
@@ -49,6 +45,9 @@
                     required
                     formControlName="quantity"
                   />
+                  <mat-error *ngFor="let validation of validation_messages.quantity">
+                    <mat-error class="error-message" *ngIf="form.get('quantity')?.hasError(validation.type) && (form.get('quantity')?.dirty || form.get('quantity')?.touched)">{{validation.message}}</mat-error>
+                  </mat-error>
                 </mat-form-field>
               </div>
 

@@ -27,7 +27,7 @@ export class ProductsComponent implements OnInit {
   categories$: Observable<Category[]>;
 
   products$: Observable<Product[]>;
-  displayedColumns = ['id', 'name', 'category' ,'price', 'stock', 'action'];
+  displayedColumns = ['id', 'name', 'category' ,'price', 'quantity', 'action'];
 
   constructor(
     private productService: ProductService,

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { CategoryService } from '../services/category.service';
 import { Location } from '@angular/common';
@@ -13,6 +13,12 @@ import { ActivatedRoute } from '@angular/router';
 export class CategoryUpdateComponent implements OnInit {
   form: FormGroup;
 
+
+  validation_messages = {
+    'name': [
+      { type: 'required', message: 'O nome é obrigatório' }
+    ]
+  }
   constructor(
     private formBuilder: FormBuilder,
     private categoryService: CategoryService,
@@ -22,8 +28,7 @@ export class CategoryUpdateComponent implements OnInit {
   ) {
     this.form = this.formBuilder.group({
       id: null,
-      name: [null],
-      description: null,
+      name: [null, Validators.required]
     });
   }
 
@@ -33,8 +38,7 @@ export class CategoryUpdateComponent implements OnInit {
       this.categoryService.findById(id).subscribe((category) => {
         this.form.setValue({
           id: category.id,
-          name: category.name,
-          description: category.description,
+          name: category.name
         });
       });
     }

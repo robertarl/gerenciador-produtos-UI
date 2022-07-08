@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ProductService } from '../services/product.service';
 import { Location } from '@angular/common';
@@ -33,9 +33,6 @@ export class ProductCreateComponent implements OnInit {
     ],
     'quantity': [
       { type: 'required', message: 'A quantidade é obrigatória' }
-    ],
-    'description': [
-      { type: 'required', message: 'A descrição é obrigatória' }
     ]
   }
 
@@ -52,7 +49,7 @@ export class ProductCreateComponent implements OnInit {
       category: [null, Validators.required],
       price: [0,  Validators.required],
       quantity: [null,  Validators.required],
-      description: [null,  Validators.required]
+      description: [null]
     });
   }
 

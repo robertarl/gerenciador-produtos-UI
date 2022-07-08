@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { CategoryService } from '../services/category.service';
 import { Location } from '@angular/common';
@@ -13,14 +13,19 @@ export class CategoryCreateComponent implements OnInit {
 
   form: FormGroup
 
+  validation_messages = {
+    'name': [
+      { type: 'required', message: 'O nome é obrigatório' }
+    ]
+  }
+
   constructor(private formBuilder: FormBuilder,
     private categoryService: CategoryService,
     private snackBar: MatSnackBar,
     private location: Location) {
 
     this.form = this.formBuilder.group({
-      name: [null],
-      description: null
+      name: [null, Validators.required]
     });
    }
 

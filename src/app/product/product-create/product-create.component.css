@@ -120,4 +120,7 @@ button{
   background-color: #8349e7;
   color: white;
 }
+.descricao{
+  max-height: 80px;
+}
 
