@@ -1,3 +1,4 @@
+import { CategoryService } from './../../category/services/category.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { Product } from './../models/product';
@@ -7,12 +8,14 @@ import { catchError, Observable, of } from 'rxjs';
 import { ErrorDialogComponent } from 'src/app/shared/components/error-dialog/error-dialog.component';
 import Swal from 'sweetalert2';
 import { faFilter, faPen, faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { Category } from 'src/app/category/models/category';
 
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
-  styleUrls: ['./products.component.css']
+  styleUrls: ['./products.component.css'],
+  providers : [ProductService]
 })
 export class ProductsComponent implements OnInit {
 
@@ -21,17 +24,21 @@ export class ProductsComponent implements OnInit {
   faPen = faPen;
   faTrash = faTrash;
 
+  categories$: Observable<Category[]>;
 
   products$: Observable<Product[]>;
-  displayedColumns = ['id', 'name', 'category', 'price', 'stock', 'action'];
+  displayedColumns = ['id', 'name', 'category' ,'price', 'stock', 'action'];
 
   constructor(
     private productService: ProductService,
+    private categoryService: CategoryService,
     public dialog: MatDialog,
     private router: Router,
     private route: ActivatedRoute
   ) {
     this.products$ = this.updateList();
+    this.categories$ = this.categoryService.list();
+
   }
 
   updateList(){
@@ -42,6 +49,7 @@ export class ProductsComponent implements OnInit {
       })
     );
   }
+
 
   onError(errorMsg: string) {
     this.dialog.open(ErrorDialogComponent, {

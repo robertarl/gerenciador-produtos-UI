@@ -40,6 +40,7 @@ export class CategoriesComponent implements OnInit {
       })
     );
   }
+  
   onError(errorMsg: string) {
     this.dialog.open(ErrorDialogComponent, {
       data: errorMsg,

@@ -21,6 +21,7 @@ export class CategoryUpdateComponent implements OnInit {
     private route: ActivatedRoute
   ) {
     this.form = this.formBuilder.group({
+      id: null,
       name: [null],
       description: null,
     });

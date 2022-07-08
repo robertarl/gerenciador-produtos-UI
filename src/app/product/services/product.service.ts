@@ -2,6 +2,7 @@ import { Product } from './../models/product';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { delay, Observable, tap } from 'rxjs';
+import { Category } from 'src/app/category/models/category';
 
 @Injectable({
   providedIn: 'root'
@@ -20,8 +21,13 @@ export class ProductService {
     )
   }
 
+  categoryList(){
+    return this.httpClient.get<Category[]>(this.API)
+  }
+
   save(product: Product){
-    return this.httpClient.post<Product>(this.API, product);
+
+    return this.httpClient.post<Product>(`${this.API}`, product);
   }
 
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ProductService } from '../services/product.service';
 import { Location } from '@angular/common';
@@ -21,7 +21,7 @@ export class ProductUpdateComponent implements OnInit {
               private route: ActivatedRoute) {
     this.form = this.formBilder.group({
       id: null,
-      name: [null],
+      name: [null, Validators.required],
       category: null,
       price: 0,
       quantity: [null],
@@ -36,7 +36,7 @@ export class ProductUpdateComponent implements OnInit {
         this.form.setValue({
           id: product.id,
           name: product.name,
-          category: product.category,
+          category_id: product.category,
           price: product.price,
           quantity: product.quantity,
           description: product.description

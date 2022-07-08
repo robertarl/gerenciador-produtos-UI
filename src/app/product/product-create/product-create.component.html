@@ -2,73 +2,88 @@
 <section class="section-products">
   <div class="container px-5">
     <mat-card>
-            <mat-card-title> Novo Produto </mat-card-title>
-          <mat-card-content class="new">
-            <form [formGroup]="form" class="min-width">
-              <mat-form-field class="nome">
-                <input
-                  matInput
-                  placeholder="Nome"
-                  required
-                  formControlName="name"
-                />
-              </mat-form-field>
+      <mat-card-title> Novo Produto </mat-card-title>
+      <mat-card-content class="new">
 
-              <mat-form-field class="categoria">
-                <mat-label>Categoria</mat-label>
-                <mat-select required formControlName="category">
-                  <mat-option value="none" style="font-size: 13px"
-                    >--Selecione uma categoria--</mat-option
-                  >
-                  <mat-option value="one">First option</mat-option>
-                  <mat-option value="two">Second option</mat-option>
-                </mat-select>
-              </mat-form-field>
+        <form [formGroup]="form" class="min-width">
+          <mat-form-field class="nome">
+            <input
+              matInput
+              placeholder="Nome"
+              required
+              formControlName="name"
+            />
+            <mat-error *ngFor="let validation of validation_messages.name">
+              <mat-error class="error-message" *ngIf="form.get('name')?.hasError(validation.type) && (form.get('name')?.dirty || form.get('name')?.touched)">{{validation.message}}</mat-error>
+            </mat-error>
+          </mat-form-field>
 
-              <div class="d-flex" style="justify-content: space-between;">
-                <mat-form-field class="preco" style="width: 40%;">
-                  <input
-                    matInput
-                    currencyMask
-                    placeholder="Preço (R$): "
-                    required
-                    formControlName="price"
-                    [options]="{
-                      align: 'left',
-                      prefix: 'R$ ',
-                      thousands: '.',
-                      decimal: ','
-                    }"
-                  />
-                </mat-form-field>
-
-                <mat-form-field class="quantidade" style="width: 50%;">
-                  <input
-                    matInput
-                    placeholder="Quantidade"
-                    required
-                    formControlName="quantity"
-                  />
-                </mat-form-field>
-              </div>
-
-              <mat-form-field class="descricao">
-                <mat-label>Descrição</mat-label>
-                <textarea matInput formControlName="quantity"></textarea>
-              </mat-form-field>
-            </form>
-
-            <mat-card-actions>
-              <button
-                mat-raised-button
-                class="create"
-                (click)="createProduct()"
+          <mat-form-field class="categoria">
+            <mat-label>Categoria</mat-label>
+            <mat-select required formControlName="category">
+              <mat-option> Selecione</mat-option>
+              <mat-option
+                *ngFor="let cat of categories$ | async"
+                [value]="cat"
+                >{{ cat.name }}</mat-option
               >
-                Cadastrar
-              </button>
-              <button mat-raised-button (click)="cancel()">Cancelar</button>
-            </mat-card-actions>
-          </mat-card-content>
+            </mat-select>
+            <mat-error *ngFor="let validation of validation_messages.category">
+              <mat-error class="error-message" *ngIf="form.get('category')?.hasError(validation.type) && (form.get('category')?.dirty || form.get('category')?.touched)">{{validation.message}}</mat-error>
+            </mat-error>
+          </mat-form-field>
+
+          <div class="d-flex" style="justify-content: space-between">
+            <mat-form-field class="preco" style="width: 40%">
+              <input
+                matInput
+                currencyMask
+                placeholder="Preço (R$): "
+                required
+                formControlName="price"
+                [options]="{
+                  align: 'left',
+                  prefix: 'R$ ',
+                  thousands: '.',
+                  decimal: ','
+                }"
+              />
+              <mat-error *ngFor="let validation of validation_messages.price">
+                <mat-error class="error-message" *ngIf="form.get('price')?.hasError(validation.type) && (form.get('price')?.dirty || form.get('price')?.touched)">{{validation.message}}</mat-error>
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="quantidade" style="width: 50%">
+              <input
+              type="number"
+                matInput
+                placeholder="Quantidade"
+                required
+                formControlName="quantity"
+              />
+              <mat-error *ngFor="let validation of validation_messages.quantity">
+                <mat-error class="error-message" *ngIf="form.get('quantity')?.hasError(validation.type) && (form.get('quantity')?.dirty || form.get('quantity')?.touched)">{{validation.message}}</mat-error>
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <mat-form-field class="descricao">
+            <mat-label>Descrição</mat-label>
+            <textarea matInput formControlName="description"></textarea>
+            <mat-error *ngFor="let validation of validation_messages.description">
+              <mat-error class="error-message" *ngIf="form.get('description')?.hasError(validation.type) && (form.get('description')?.dirty || form.get('description')?.touched)">{{validation.message}}</mat-error>
+            </mat-error>
+          </mat-form-field>
+
+        </form>
+
+        <mat-card-actions>
+          <button mat-raised-button class="create" (click)="createProduct()">
+            Cadastrar
+          </button>
+          <button mat-raised-button (click)="cancel()">Cancelar</button>
+        </mat-card-actions>
+      </mat-card-content>
     </mat-card>
   </div>
 </section>
