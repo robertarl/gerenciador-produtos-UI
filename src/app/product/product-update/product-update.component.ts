@@ -22,12 +22,19 @@ export class ProductUpdateComponent implements OnInit {
     'name': [
       { type: 'required', message: 'O nome é obrigatório' }
     ],
+    'categoryId': [
+      { type: 'required', message: 'A categoria é obrigatória' }
+    ],
     'price': [
       { type: 'required', message: 'O preço é obrigatório' }
 
     ],
     'quantity': [
       { type: 'required', message: 'A quantidade é obrigatória' }
+    ]
+    ,
+    'description': [
+      { type: 'required', message: 'A descrição é obrigatória' }
     ]
   }
 
@@ -44,10 +51,10 @@ export class ProductUpdateComponent implements OnInit {
     this.form = this.formBilder.group({
       id: null,
       name: [null, Validators.required],
-      category: null,
+      categoryId: [null, Validators.required],
       price: [0, Validators.required],
-      quantity: null,
-      description: null,
+      quantity: [null, Validators.required],
+      description: [null, Validators.required]
     });
   }
 
@@ -58,7 +65,7 @@ export class ProductUpdateComponent implements OnInit {
         this.form.setValue({
           id: product.id,
           name: product.name,
-          category: product.category,
+          categoryId: product.category.id,
           price: product.price,
           quantity: product.quantity,
           description: product.description,

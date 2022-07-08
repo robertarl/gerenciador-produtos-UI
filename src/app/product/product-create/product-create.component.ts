@@ -24,7 +24,7 @@ export class ProductCreateComponent implements OnInit {
     'name': [
       { type: 'required', message: 'O nome é obrigatório' }
     ],
-    'category': [
+    'categoryId': [
       { type: 'required', message: 'A categoria é obrigatória' }
     ],
     'price': [
@@ -33,6 +33,9 @@ export class ProductCreateComponent implements OnInit {
     ],
     'quantity': [
       { type: 'required', message: 'A quantidade é obrigatória' }
+    ],
+    'description': [
+      { type: 'required', message: 'A descrição é obrigatória' }
     ]
   }
 
@@ -46,10 +49,10 @@ export class ProductCreateComponent implements OnInit {
     this.categories$ = this.categoryService.list();
     this.form = this.formBuilder.group({
       name: [null, Validators.required],
-      category: [null, Validators.required],
+      categoryId: [null, Validators.required],
       price: [0,  Validators.required],
       quantity: [null,  Validators.required],
-      description: [null]
+      description: [null,  Validators.required]
     });
   }
 

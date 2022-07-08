@@ -17,6 +17,21 @@
                 </mat-error>
               </mat-form-field>
 
+              <mat-form-field class="categoria">
+                <mat-label>Categoria</mat-label>
+                <mat-select required formControlName="categoryId">
+                  <mat-option> Selecione</mat-option>
+                  <mat-option
+                    *ngFor="let cat of categories$ | async"
+                    [value]="cat.id"
+                    >{{ cat.name }}</mat-option
+                  >
+                </mat-select>
+                <mat-error *ngFor="let validation of validation_messages.categoryId">
+                  <mat-error class="error-message" *ngIf="form.get('categoryId')?.hasError(validation.type) && (form.get('categoryId')?.dirty || form.get('categoryId')?.touched)">{{validation.message}}</mat-error>
+                </mat-error>
+              </mat-form-field>
+
               <div class="d-flex" style="justify-content: space-between;">
                 <mat-form-field class="preco" style="width: 40%;">
                   <input
