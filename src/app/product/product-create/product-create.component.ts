@@ -4,10 +4,10 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { ProductService } from '../services/product.service';
 import { Location } from '@angular/common';
 import { catchError, Observable, of } from 'rxjs';
-import { Category } from 'src/app/category/models/category';
-import { CategoryService } from 'src/app/category/services/category.service';
 import { ErrorDialogComponent } from 'src/app/shared/components/error-dialog/error-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
+import { Category } from 'src/app/category/models/category';
+import { CategoryService } from 'src/app/category/services/category.service';
 
 @Component({
   selector: 'app-product-create',

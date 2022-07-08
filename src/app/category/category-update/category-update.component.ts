@@ -45,10 +45,13 @@ export class CategoryUpdateComponent implements OnInit {
   }
 
   updateCategory(): void {
-    this.categoryService.update(this.form.value).subscribe(
-      (data) => this.sucess(),
-      (error) => this.onError()
-    );
+    if(this.form.valid) {
+      this.categoryService.save(this.form.value)
+      .subscribe(data => this.sucess(),
+      error =>this.onError());
+    } else {
+      this.snackBar.open('Os campos precisam ser prenchidos!!!', 'X', {duration: 3000});
+    }
   }
 
   cancel() {

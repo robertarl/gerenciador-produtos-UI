@@ -5,8 +5,8 @@
 <ul>
   <li> Tela inicial: </li>
     <ul>
-      <li>Listagem dos produtos</li>
-      <li>Cadastros dos produtos</li>
+      <li>Cadastro de produtos</li>
+      <li>Cadastros de categorias</li>
     </ul>
   </li>
 </ul>
