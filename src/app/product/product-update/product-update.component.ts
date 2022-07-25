@@ -76,7 +76,7 @@ export class ProductUpdateComponent implements OnInit {
 
   updateProduct(): void {
     if(this.form.valid) {
-      this.service.save(this.form.value)
+      this.service.update(this.form.value)
       .subscribe(data => this.sucess(),
       error =>this.onError());
     } else {

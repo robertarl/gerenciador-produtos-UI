@@ -46,7 +46,7 @@ export class CategoryUpdateComponent implements OnInit {
 
   updateCategory(): void {
     if(this.form.valid) {
-      this.categoryService.save(this.form.value)
+      this.categoryService.update(this.form.value)
       .subscribe(data => this.sucess(),
       error =>this.onError());
     } else {
